@@ -1,0 +1,11 @@
+{
+  "opts": {
+    "recurse": true,
+    "destination": "./docs/"
+  },
+  "source": {
+    "include": ["./client", "./common", "./server"],
+    "exclude": ["./node_modules", "./play", "./dist"],
+    "includePattern": ".+\\.m?js(doc|x)?$"
+  }
+}

@@ -1,0 +1,14 @@
+dump.rdb
+.DS_Store
+.env
+.vscode/
+dist/
+logs/
+node_modules/
+play/
+docs/
+guestfeeds.json
+initprivate.sql
+master-feed-orig-0.txt
+master-feed-updated-1.txt
+*.log
