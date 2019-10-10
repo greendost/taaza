@@ -98,8 +98,6 @@ const App = () => {
             a: {
               color: theme.color.link1
             }
-            // debug
-            // main: { outline: '1px solid red'}
           }}
         ></Global>
         <BrowserRouter>

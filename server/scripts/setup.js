@@ -24,6 +24,10 @@ var guestFeeds = [
   'The Go Programming Language Blog'
 ];
 
+if (!fs.existsSync(path.resolve(__dirname, '../data'))) {
+  fs.mkdirSync(path.resolve(__dirname, '../data'));
+}
+
 /**
  * @description Setup script - currently just one task, which is to
  * export guest feeds from database into a guestfeeds.json file,

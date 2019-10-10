@@ -28,7 +28,6 @@ Steps
   e.g.
 
 ```
-NODE_ENV=development
 AWS_SDK_LOAD_CONFIG=1
 PORT=some_port
 SESSION_DURATION_SECONDS=some_number_of_seconds
@@ -100,7 +99,7 @@ Let's call it 0.1
 
 ## License
 
-Please see the [LICENSE](LICENSE) file for details
+This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
 

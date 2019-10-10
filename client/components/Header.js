@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import AppContext from '../context/AppContext';
 import Menu from './Menu';
+import Logo from './Logo';
 
 const Header = ({ history }) => {
   const styleFn = theme => ({
@@ -45,7 +46,9 @@ const Header = ({ history }) => {
   return (
     <header css={theme => [styleFn(theme)]}>
       <div>
-        <Link to="/">Taaza</Link>
+        <Link to="/">
+          <Logo />
+        </Link>
       </div>
       {state.userState === 'loggedout' || state.userState === 'default' ? (
         <div>

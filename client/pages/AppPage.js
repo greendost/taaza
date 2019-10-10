@@ -1,7 +1,9 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+
 import ViewPostsSubPage from '../components/ViewPostsSubPage';
 import AddFeedsSubPage from '../components/AddFeedsSubPage';
+import NoMatchPage from './NoMatchPage';
 import Main from '../components/Main';
 
 /**
@@ -38,6 +40,7 @@ const AppPage = () => {
         <Switch>
           <Route exact path="/add" component={AddFeedsSubPage} />
           <Route exact path="/" component={ViewPostsSubPage} />
+          <Route component={NoMatchPage} />
         </Switch>
       </Main>
     </>
