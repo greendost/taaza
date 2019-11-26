@@ -10,7 +10,8 @@ const styleFn = theme => ({
     textShadow: `1px 1px 3px ${theme.color.colorGlowLight}`
     // fontSize: theme.typography.fontSizeSelect
   },
-  transition: `all 0.2s ease-in`
+  transition: `all 0.2s ease-in`,
+  cursor: 'pointer'
 });
 
 /**

@@ -4,6 +4,8 @@ const themeList = {
     primaryAdjust10: '#001599',
     primary2: '#453954',
     primary2Adjust10: '#2C2436',
+    primary2Desat: '#535057', // lighten 5, desat 15
+    primary2Shadow: '#453954',
     secondary: '#f0e5c5',
     secondaryGlow: '#FAF7EE',
     secondaryGlowLight: 'rgba(250, 247, 238, 0.4)',
@@ -16,6 +18,8 @@ const themeList = {
     primaryAdjust10: '#E6D39C',
     primary2: '#d9e043',
     primary2Adjust10: '#C6CE22',
+    primary2Desat: '#c5ca59', // desat 20
+    primary2Shadow: '#453954',
     secondary: '#000E66',
     secondaryGlow: '#001FE6',
     secondaryGlowLight: 'rgba(0, 31, 230, 0.2)',
@@ -28,6 +32,7 @@ const themeList = {
     primaryAdjust10: '#E6D39C',
     primary2: '#d9e043',
     primary2Adjust10: '#C6CE22',
+    primary2Desat: '#c5ca59',
     secondary: '#000E66',
     secondaryGlow: '#001FE6',
     secondaryGlowLight: 'rgba(0, 31, 230, 0.2)',
@@ -56,6 +61,10 @@ const setTheme = mode => {
       listBgHover: tm.primary2Adjust10,
       listBorder: tm.primary2Adjust10,
       list: tm.secondary2,
+      // card
+      cardBg: tm.primary2,
+      cardBgNoSelect: tm.primary2Desat,
+      cardShadow: tm.primary2Shadow,
       // menu
       menuItemBg: tm.primary,
       menuItemBgHover: tm.primaryAdjust10,

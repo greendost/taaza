@@ -18,13 +18,18 @@ const styleCardContainerFn = theme => ({
 });
 
 const styleCardFn = theme => ({
-  backgroundColor: theme.color.listBg,
+  backgroundColor: theme.color.cardBg,
   color: theme.color.list,
   height: '100%',
-  boxShadow: `1px 1px 3px ${theme.color.list}`,
+  boxShadow: `1px 1px 3px ${theme.color.cardShadow}`,
   padding: '10px',
   overflow: 'hidden',
-  position: 'relative'
+  position: 'relative',
+  cursor: 'pointer',
+  '&.noSelect': {
+    cursor: 'auto',
+    backgroundColor: theme.color.cardBgNoSelect
+  }
 });
 
 /**
@@ -33,6 +38,10 @@ const styleCardFn = theme => ({
  */
 const AddFeedsSubPage = () => {
   const { state, dispatch } = useContext(AppContext);
+  var userFeedsObj = {};
+  state.userFeeds.forEach(uf => {
+    userFeedsObj[uf.feedId] = uf;
+  });
 
   useEffect(() => {
     // console.log('AddFeedsSubPage - useEffect');
@@ -116,11 +125,6 @@ const AddFeedsSubPage = () => {
     }
   };
 
-  var userFeedsObj = {};
-  state.userFeeds.forEach(uf => {
-    userFeedsObj[uf.feedId] = uf;
-  });
-
   // render, conditionally
   switch (state.userState) {
     case 'default':
@@ -140,6 +144,15 @@ const AddFeedsSubPage = () => {
                 css={theme => [styleCardFn(theme)]}
                 onClick={handleChecked}
                 data-feedid={f.feedId}
+                className={
+                  userFeedsObj[f.feedId] &&
+                  (userFeedsObj[f.feedId].statusSubscribe ===
+                    statusEnum.SUCCESS ||
+                    userFeedsObj[f.feedId].statusSubscribe ===
+                      statusEnum.REQUEST)
+                    ? 'noSelect'
+                    : ''
+                }
               >
                 <PTitle
                   style={theme => ({ display: 'flex', alignItems: 'center' })}

@@ -38,14 +38,20 @@ const mainReducer = (state, action) => {
         statusSubscribe: statusEnum.SUCCESS,
         objectType: 'feedModelObject'
       });
-      newState.userFeeds.push(userFeed);
+      // same check as user_feeds_request_subscribe, preventing duplicates
+      if (!newState.userFeeds.map(uf => uf.feedId).includes(action.payload))
+        newState.userFeeds.push(userFeed);
     } else if (action.type === 'USER_FEEDS_REQUEST_SUBSCRIBE') {
       var feed = newState.feeds.filter(f => f.feedId === action.payload)[0];
       var userFeed = new UserFeedModel(feed, {
         statusSubscribe: statusEnum.REQUEST,
         objectType: 'feedModelObject'
       });
-      newState.userFeeds.push(userFeed);
+      // fix for preventing duplicate feed from being added to user feeds.
+      // this seems like the right place for it, as we don't want to prevent
+      // the user from resubscribing in the event of error
+      if (!newState.userFeeds.map(uf => uf.feedId).includes(action.payload))
+        newState.userFeeds.push(userFeed);
     } else if (action.type === 'USER_FEEDS_ERROR_SUBSCRIBE') {
       let index = null;
       for (let i = 0; i < newState.userFeeds.length; i++) {
