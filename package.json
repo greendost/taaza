@@ -27,7 +27,7 @@
     "@emotion/core": "^10.0.17",
     "aws-sdk": "^2.526.0",
     "babel-loader": "^8.0.6",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
     "circular-dependency-plugin": "^5.2.0",
